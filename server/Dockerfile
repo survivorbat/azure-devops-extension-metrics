@@ -22,7 +22,7 @@ RUN go test \
 FROM scratch
 
 COPY --from=builder /etc/group  /etc/passwd /etc/
-COPY --from=builder /listener /go/bin/listener
+COPY --from=builder /server /go/bin/listener
 
 USER appuser:appuser
 

@@ -1,4 +1,4 @@
-const start = require('../package/dist').start;
+const start = require('../client/dist').start;
 
 const config = {
     host: 'localhost',

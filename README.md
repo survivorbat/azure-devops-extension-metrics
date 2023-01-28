@@ -7,7 +7,7 @@ Well then this might be for you.
 
 ## ✏️Design
 
-![Design](docs/design.drawio.png)
+![Design](design.drawio.png)
 
 ## 📋 Usage
 
