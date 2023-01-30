@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+    expose:
+      - "6379"
+    restart: always
+
+  ui:
+    image: marian/rebrow
+    ports:
+      - "5001:5001"
+    restart: always
+
+  server:
+    build: ../server
+    ports:
+      - "3000:3000"
+    depends_on:
+      - redis
+    restart: always
+    environment:
+      REDIS_HOST: redis:6379
+      REDIS_PASSWORD: ""
+      REDIS_DB: 0
+      PROCESSOR_ID: redis
+      LISTENER_URL: 0.0.0.0:3000

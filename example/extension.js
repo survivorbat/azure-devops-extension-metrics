@@ -1,8 +1,9 @@
 const start = require('../client/dist').start;
 
-const config = {
+const config  = {
     host: 'localhost',
-    port: 8080,
+    port: 3000,
+    errorCallback: console.error,
 }
 
 const run = async () => {
@@ -10,7 +11,10 @@ const run = async () => {
 
     console.log('Extension is running')
 
-    await end();
+    setTimeout(() => {
+        console.log('Extension is stopping')
+        return end();
+    }, 2000)
 }
 
 run().then()
